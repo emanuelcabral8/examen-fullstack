@@ -3,202 +3,238 @@ const { title = 'FilmRush' } = Astro.props;
 ---
 
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content="FilmRush – Cine, series y celebridades." />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <meta
+            name="description"
+            content="FilmRush – Cine, series y celebridades."
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+    </head>
 
-  <body>
-    <header>
-      <img class="logo" src="/images/logos/logo-filmrush.png" alt="FilmRush Logo" />
-      
-      <button class="open">
-        <img src="/burger-menu.svg" class="hamburger-icon" alt="Menú" />
-      </button>
+    <body>
+        <header>
+            <img
+                class="logo"
+                src="/images/logos/logo-filmrush.png"
+                alt="FilmRush Logo"
+            />
 
-      <nav class="nav">
-        <button class="close">
-          <img src="/close.svg" class="close-icon" alt="Cerrar menú" />
-        </button>
-        <ul class="nav__list">
-          <li><a href="/movies">Películas</a></li>
-          <li><a href="/series">Series</a></li>
-          <li><a href="/reviews">Celebridades</a></li>
-          <li><a href="/contact">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+            <button class="open">
+                <img src="/images/navbar/burger-menu.svg" class="hamburger-icon" alt="Menú" />
+            </button>
 
-    <main class="container">
-      <slot />
-    </main>
+            <nav class="nav">
+                <button class="close">
+                    <img
+                        src="images/navbar/close.svg"
+                        class="close-icon"
+                        alt="Cerrar menú"
+                    />
+                </button>
+                <ul class="nav__list">
+                    <li><a href="/movies">Películas</a></li>
+                    <li><a href="/series">Series</a></li>
+                    <li><a href="/reviews">Celebridades</a></li>
+                    <li><a href="/contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <footer class="site-footer">
-      <p>© 2025 FilmRush || Todos los derechos reservados</p>
-      <div class="social-media">
-        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </div>
-    </footer>
+        <main class="container">
+            <slot />
+        </main>
 
-    <style>
-      :root {
-        --color-dark-red: #780000;
-        --color-red: #C1121F;
-        --color-beige: #FDF0D5;
-        --color-dark-blue: #003049;
-        --color-light-blue: #669BBC;
-      }
+        <footer class="site-footer">
+            <p>© 2025 FilmRush || Todos los derechos reservados</p>
+            <div class="social-media">
+                <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    aria-label="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    aria-label="Facebook"
+                >
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a
+                    href="https://www.twitter.com"
+                    target="_blank"
+                    aria-label="Twitter"
+                >
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                    href="https://wa.me/1234567890"
+                    target="_blank"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </footer>
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+        <style>
+            :root {
+                --color-dark-red: oklch(0.3596 0.147571 29.2339);
+                --color-red: oklch(0.5161 0.2019 25.94);
+                --color-beige: oklch(0.9584 0.0381 85.35);
+                --color-dark-blue: oklch(0.2938 0.0656 238.47);
+                --color-light-blue: oklch(0.665 0.0747 236.79);
+            }
 
-      body {
-        font-family: 'Roboto', sans-serif;
-        background-color: var(--color-beige);
-        color: var(--color-dark-blue);
-        line-height: 1.5;
-        min-height: 100vh;
-      }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-      header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-        background-color: var(--color-dark-red);
-        color: white;
-      }
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: var(--color-beige);
+                color: var(--color-dark-blue);
+                line-height: 1.5;
+                min-height: 100vh;
+            }
 
-      .logo {
-        width: 1%;
-      }
+            /* Modificado para navbar fijo y sin espacios arriba/abajo */
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 60px; /* altura fija */
+                padding: 0 1rem; /* solo padding horizontal */
+                background-color: var(--color-dark-red);
+                color: white;
+            }
 
-      .hamburger-icon,
-      .close-icon,
-      .search-icon {
-        width: 32px;
-        height: 32px;
-      }
+            .logo {
+                height: 60px; 
+                width: auto;
+                display: block;
+            }
 
-      .search-icon {
-        margin-right: 50px;
-      }
+            .hamburger-icon,
+            .close-icon,
+            .search-icon {
+                width: 32px;
+                height: 32px;
+            }
 
-      .nav {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 2rem;
-        gap: 1rem;
-        background-color: var(--color-dark-red);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(100%);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        pointer-events: none;
-      }
+            .search-icon {
+                margin-right: 50px;
+            }
 
-      .nav.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
-        pointer-events: auto;
-      }
+            .nav {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem;
+                gap: 1rem;
+                background-color: var(--color-dark-red);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateX(100%);
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.3s ease;
+                pointer-events: none;
+            }
 
-      .nav__list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
+            .nav.visible {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
 
-      .nav__list a {
-        text-decoration: none;
-        color: white;
-      }
+            .nav__list {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
 
-      .nav__list a:hover {
-        background-color: var(--color-light-blue);
-        padding: 0.3rem;
-        border-radius: 4px;
-      }
+            .nav__list a {
+                text-decoration: none;
+                color: white;
+            }
 
-      .close {
-        align-self: flex-start;
-      }
+            .nav__list a:hover {
+                background-color: var(--color-light-blue);
+                padding: 0.3rem;
+                border-radius: 4px;
+            }
 
-      .container {
-        padding: 1rem;
-      }
+            .close {
+                align-self: flex-start;
+            }
 
-      .site-footer {
-        background-color: var(--color-dark-blue);
-        color: var(--color-beige);
-        text-align: center;
-        padding: 1rem;
-        margin-top: 2rem;
-        font-size: 0.9rem;
-      }
+            .container {
+                padding: 1rem;
+            }
 
-      .social-media {
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-      }
+            .site-footer {
+                background-color: var(--color-dark-blue);
+                color: var(--color-beige);
+                text-align: center;
+                padding: 1rem;
+                margin-top: 2rem;
+                font-size: 0.9rem;
+            }
 
-      .social-media a {
-        color: var(--color-beige);
-        font-size: 1.2rem;
-        text-decoration: none;
-      }
+            .social-media {
+                margin-top: 1rem;
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
 
-      @media (min-width: 768px) {
-        .social-media a {
-          font-size: 1.4rem;
-        }
-      }
-    </style>
+            .social-media a {
+                color: var(--color-beige);
+                font-size: 1.2rem;
+                text-decoration: none;
+            }
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const nav = document.querySelector('.nav');
-        const open = document.querySelector('.open');
-        const close = document.querySelector('.close');
+            @media (min-width: 768px) {
+                .social-media a {
+                    font-size: 1.4rem;
+                }
+            }
+        </style>
 
-        open?.addEventListener('click', () => {
-          nav?.classList.add('visible');
-        });
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const nav = document.querySelector('.nav');
+                const open = document.querySelector('.open');
+                const close = document.querySelector('.close');
 
-        close?.addEventListener('click', () => {
-          nav?.classList.remove('visible');
-        });
-      });
-    </script>
-  </body>
+                open?.addEventListener('click', () => {
+                    nav?.classList.add('visible');
+                });
+
+                close?.addEventListener('click', () => {
+                    nav?.classList.remove('visible');
+                });
+            });
+        </script>
+    </body>
 </html>
