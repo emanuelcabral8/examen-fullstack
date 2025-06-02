@@ -1,16 +1,74 @@
 ---
-
+import Layout from '../layouts/layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Inicio – FilmRush">
+  <section style="text-align: center; margin-bottom: 2rem;">
+    <h1>Bienvenidos a FilmRush</h1>
+    <p>Tu espacio para descubrir películas y series del momento.</p>
+  </section>
+
+  <section>
+    <h2 style="text-align: center;">🎬 Películas favoritas del público</h2>
+    <div class="carousel" id="featured-carousel">
+      <!-- array de peliculas -->
+    </div>
+  </section>
+
+  <section style="margin-top: 3rem;">
+    <h2>📺 Series recomendadas</h2>
+    <div id="series-section">
+      <!-- array de series -->
+    </div>
+  </section>
+
+  <style>
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 1rem 0;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 250px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #series-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .series-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding: 0.5rem;
+    }
+  </style>
+
+  <script>
+    // arrays con import o fetch, estudiar la diferencia
+    // codig para mostrarlas
+  </script>
+</Layout>
