@@ -26,6 +26,7 @@ import moviesData from "../data/moviesData";
       })
     }
     </section>
+    <h1>Opiniones más populares sobre series</h1>
 
 
 </Layout>
@@ -40,5 +41,18 @@ import moviesData from "../data/moviesData";
         text-align: center;
         color:var(--color-dark-blue);
     }
+     @media (min-width: 768px) and (max-width: 1024px) { 
+        .review-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+     }
+     @media (min-width: 1025px) {
+        .review-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+     }
 </style>
 

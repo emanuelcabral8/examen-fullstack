@@ -12,8 +12,8 @@ import '../styles/theme.css';
         <section class="title">
             <h2>{title}</h2>
         </section>
-        <p class = "year">{year}</p>
-        <p class = "rating">Calificación: ⭐ {userRating} (promedio: {rating})</p>
+        <p class="year">{year}</p>
+        <p class="rating">Calificación: ⭐ {userRating} (promedio: {rating})</p>
     </div>
     <section class="review">
         <p>{review}</p>
@@ -70,7 +70,7 @@ import '../styles/theme.css';
         border-radius: 8px;
         padding: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-        
+        container-type: inline-size;
     }
     .info {
         grid-column: 2/5;
@@ -85,17 +85,48 @@ import '../styles/theme.css';
         grid-column: 3/5;
         justify-self: end;
         align-self: end;
-        
     }
 
     .username a {
         color: var(--color-light-blue);
         font-weight: 700;
     }
-    .year,.rating{
+    .year,
+    .rating {
         opacity: 0.7;
     }
-    h2 {
+    .card .title h2 {
         color: var(--color-dark-blue);
+    }
+    .username {
+        grid-row: 3;
+        grid-column: 1/4;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        footer {
+            display: flex;
+            flex-direction: row;
+        }
+        time {
+            margin-left: auto;
+        }
+        .review {
+            font-style: italic;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        p,
+        time {
+            font-weight: 500;
+        }
+        h2 {
+            font-size: 30px;
+        }
+    }
+    @media (min-width: 1025px) {
     }
 </style>
