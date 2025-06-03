@@ -1,0 +1,2 @@
+## Cómo trabajamos en equipo
+Primero planteamos el concepto antes de ponernos a programar, luego hicimos bocetos del diseño pero sin tocar código aún y después nos dividimos responsabilidades y trabajamos en ramas, avisando cuando haciamos un commit.
