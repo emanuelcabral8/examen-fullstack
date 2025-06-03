@@ -103,29 +103,13 @@ import '../styles/theme.css';
         grid-column: 1/4;
         align-self: end;
     }
+    @media (min-width: 1024px) {
+        .card {
+            transition: transform 0.3s ease;
+        }
 
-    @media (min-width: 768px) and (max-width: 1024px) {
-        footer {
-            display: flex;
-            flex-direction: row;
-        }
-        time {
-            margin-left: auto;
-        }
-        .review {
-            font-style: italic;
-        }
-        .info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-        p,
-        time {
-            font-weight: 500;
-        }
-        h2 {
-            font-size: 30px;
+        .card:hover {
+            transform: scale(1.03);
         }
     }
 </style>
