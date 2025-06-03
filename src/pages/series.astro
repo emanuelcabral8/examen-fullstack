@@ -1,33 +1,98 @@
 ---
 import Layout from '../layouts/layout.astro';
+import seriesData from '../data/seriesData.js';
 ---
 
 <Layout title="Series">
   <section style="text-align: center; margin-bottom: 2rem;">
-    <h1>Las mejores series del momento! 📺</h1>
+    <h1>Las mejores series de todos los tiempos! 📺</h1>
   </section>
 
 <section style="margin-top: 3rem;" id="series">
-  <div id="contenedorSeries">
-    <!-- cards con js -->
-
-
-  </div>
+    <div id="contenedorSeries">
+      {seriesData.map((serie, i) => (
+        <div class="series" data-index={i}>
+          <img src={serie.image} alt={`Imagen de ${serie.title}`} />
+          <div class="series-contenido">
+            <h2>{serie.title}</h2>
+            <p>Puntuación: {serie.overallRating}</p>
+            <p>Temporadas: {serie.seasons}</p>
+            <input class="boton-agregar-lista" type="button" value="Agregar a la lista" />
+          </div>
+        </div>
+      ))}
+    </div>
 </section>
+
 <section id="lista">
-            <h2>LISTA</h2>
-            <ul>
-                <!-- aca iran las li que creamos con js-->
-            </ul>
-            <input id="boton-borrar" type="button" value="Borrar">
+      <h2>Lista de seleccionadas</h2>
+      <ul></ul>
+      <input id="boton-borrar" type="button" value="Borrar">
 </section>
 
-  <style>
-    
-  </style>
+<style>
+    :root {
+        --color-dark-red: oklch(0.3596 0.147571 29.2339);
+        --color-red: oklch(0.5161 0.2019 25.94);
+        --color-beige: oklch(0.9584 0.0381 85.35);
+        --color-dark-blue: oklch(0.2938 0.0656 238.47);
+        --color-light-blue: oklch(0.665 0.0747 236.79);
+    }
+    #contenedorSeries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto; 
+    }
 
-<script>
-  
-</script>
+    .series {
+    background-color: var(--color-dark-red);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+    }
+
+    .series:hover {
+     transform: scale(1.05);
+    }
+
+    .series img {
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    }
+
+    .series h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: var(--color-beige);
+    }
+
+    .series p {
+    font-size: 14px;
+    color: var(--color-beige);
+    margin-bottom: 10px;
+    }
+
+    .series input[type="button"] {
+    padding: 8px 12px;
+    background: var(--color-light-blue);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    }
+
+    .series input[type="button"]:hover {
+    background-color: var(--color-beige);
+    }
+
+  </style>
 
 </Layout>
