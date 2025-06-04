@@ -15,9 +15,9 @@ import seriesData from '../data/seriesData.js';
           <img src={serie.image} alt={`Imagen de ${serie.title}`} />
           <div class="series-contenido">
             <h2>{serie.title}</h2>
-            <p>Puntuación: {serie.overallRating}</p>
+            <p>Puntuación: {serie.overallRating}⭐</p>
             <p>Temporadas: {serie.seasons}</p>
-            <input class="boton-agregar-lista" type="button" value="Agregar a la lista" />
+            <input class="boton-agregar-lista" type="button" value="Agregar a mi lista" />
           </div>
         </div>
       ))}
@@ -25,10 +25,12 @@ import seriesData from '../data/seriesData.js';
 </section>
 
 <section id="lista">
-      <h2>Lista de seleccionadas</h2>
+      <h2>Mi lista</h2>
       <ul></ul>
       <input id="boton-borrar" type="button" value="Borrar">
 </section>
+
+<script type="module" src="/src/scripts/listas.js"></script>
 
 <style>
     :root {
@@ -61,7 +63,7 @@ import seriesData from '../data/seriesData.js';
 
     .series img {
     width: 120px;
-    height: 150px;
+    height: 160px;
     object-fit: cover;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -91,6 +93,44 @@ import seriesData from '../data/seriesData.js';
 
     .series input[type="button"]:hover {
     background-color: var(--color-beige);
+    }
+    #lista {
+    border: 1px solid var(--color-ligth-blue);
+    border-radius: 8px;
+    background: var(--color-dark-red);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    }
+
+    #lista ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+      color: var(--color-beige)
+    }
+
+    #lista input[type="button"] {
+      padding: 10px 15px;
+      margin-right: 5px;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    #lista #boton-borrar {
+      background: var(--color-light-blue);
+    }
+
+    #lista #boton-borrar:hover {
+      background: var(--color-beige);
+    }
+    
+    #lista h2{
+      color: var(--color-beige);
     }
 
   </style>
