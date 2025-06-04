@@ -16,7 +16,7 @@
 
 ---
 
-## 🧱 Tecnologías utilizadas
+## 💻 Tecnologías utilizadas
 
 - Astro
 - HTML5 / CSS / JavaScript
