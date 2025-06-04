@@ -5,4 +5,7 @@
     --color-dark-blue: oklch(0.2938 0.0656 238.47);
     --color-light-blue: oklch(0.665 0.0747 236.79);
     --color-white:oklch(1 0 0);
+    --color-pale-blue: oklch(0.665 0.0747 236.79 / 50%);
+    --color-black:oklch(0 0 0);
+
 }

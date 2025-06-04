@@ -99,9 +99,9 @@ import Layout from '../layouts/layout.astro';
   height: 350px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px var(--color-black);
   transition: transform 0.3s ease;
-  background-color: #000; /* para cuando haya espacio */
+  background-color: var(--color-black); /* para cuando haya espacio */
 }
     .carousel-item:hover {
       transform: scale(1.05);
@@ -122,21 +122,21 @@ import Layout from '../layouts/layout.astro';
     }
 
     .series-card {
-      background-color: #fff;
+      background-color: var(--color-white);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 6px var(--color-black);
       text-align: center;
       padding: 0.5rem;
     }
 
     .form-container {
-  background-color: #FDF0D5;
+  background-color: var(--color-beige);
   padding: 2rem;
   max-width: 600px;
   margin: auto;
   border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px var(--color-black);
 }
 
 .contact-form {
@@ -148,29 +148,29 @@ import Layout from '../layouts/layout.astro';
 
 .contact-form label {
   font-weight: bold;
-  color: #003049;
+  color: var(--color-dark-blue);
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #C1121F;
+  border: 1px solid var(--color-red);
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #669BBC;
-  box-shadow: 0 0 5px rgba(102, 155, 188, 0.5);
+  border-color: var(--color-light-blue);
+  box-shadow: 0 0 5px var(--color-pale-blue);
 }
 
 .contact-form button {
-  background-color: #C1121F;
-  color: #fff;
+  background-color: var(--color-red);
+  color: var(--color-white);
   padding: 0.75rem;
   border: none;
   border-radius: 8px;
@@ -180,7 +180,7 @@ import Layout from '../layouts/layout.astro';
 }
 
 .contact-form button:hover {
-  background-color: #780000;
+  background-color: var(--color-dark-red);
 }
 
   </style>
