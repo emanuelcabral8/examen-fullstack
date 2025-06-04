@@ -108,6 +108,41 @@ import seriesData from '../data/seriesData.js';
   </section>
 
   <style>
+    #card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      margin: 0 auto; 
+    }
+
+    .media-card {
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px var(--color-black);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .media-card:hover {
+      transform: scale(1.05);
+    }
+
+    .media-card img {
+      width: 120px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .media-card p {
+    font-size: 14px;
+    color: var(--color-dark-blue);
+    margin-bottom: 10px;
+    }
+
+
     .carousel {
       display: flex;
       overflow-x: auto;
