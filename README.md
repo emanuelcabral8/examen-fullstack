@@ -24,22 +24,7 @@
 
 ---
 
-## 📁 Estructura del proyecto
-
-film-rush/
-├── public/
-│ └── images/ # Logos, íconos, imágenes
-├── src/
-│ ├── components/ # Componentes reutilizables
-│ ├── layouts/ # Layout base
-│ ├── pages/ # Rutas principales
-│ ├── styles/ # Estilos globales y variables
-│ └── data/ # Archivo JS con array de series/películas
-├── astro.config.mjs
-├── package.json
-└── README.md
-
-## Integrantes
+## 👤 Integrantes
     - Agustin Lujan
     - Valentina Gallo
     - Eduardo Emanuel Cabral Figueredo
