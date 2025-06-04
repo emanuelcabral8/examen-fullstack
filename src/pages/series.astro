@@ -10,31 +10,31 @@ import '../styles/theme.css';
   </section>
 
 <section style="margin-top: 3rem;" id="series">
-    <div id="contenedorSeries">
+    <div id="seriesContainer">
       {seriesData.map((serie, i) => (
         <div class="series" data-index={i}>
-          <img src={serie.image} alt={`Imagen de ${serie.title}`} />
-          <div class="series-contenido">
+          <img src={serie.image} alt={`${serie.title} Image`} />
+          <div class="series__content">
             <h2>{serie.title}</h2>
             <p>Puntuación: {serie.overallRating}⭐</p>
             <p>Temporadas: {serie.seasons}</p>
-            <input class="boton-agregar-lista" type="button" value="Agregar a mi lista" />
+            <input class="add__to__list" type="button" value="Agregar a mi lista" />
           </div>
         </div>
       ))}
     </div>
 </section>
 
-<section id="lista">
+<section id="list">
       <h2>Mi lista</h2>
       <ul></ul>
-      <input id="boton-borrar" type="button" value="Borrar">
+      <input id="delete__button" type="button" value="Borrar">
 </section>
 
-<script type="module" src="/src/scripts/listas.js"></script>
+<script type="module" src="/src/scripts/lists.js"></script>
 
 <style>
-    #contenedorSeries {
+    #seriesContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -88,7 +88,7 @@ import '../styles/theme.css';
     .series input[type="button"]:hover {
     background-color: var(--color-beige);
     }
-    #lista {
+    #list {
     border: 1px solid var(--color-ligth-blue);
     border-radius: 8px;
     background: var(--color-dark-red);
@@ -98,14 +98,14 @@ import '../styles/theme.css';
     margin: 20px auto;
     }
 
-    #lista ul {
+    #list ul {
       list-style: none;
       padding: 0;
       margin: 0 0 10px 0;
       color: var(--color-beige)
     }
 
-    #lista input[type="button"] {
+    #list input[type="button"] {
       padding: 10px 15px;
       margin-right: 5px;
       color: var(--color-black);
@@ -115,15 +115,15 @@ import '../styles/theme.css';
       transition: background-color 0.2s ease;
     }
 
-    #lista #boton-borrar {
+    #list #delete__button {
       background: var(--color-light-blue);
     }
 
-    #lista #boton-borrar:hover {
+    #list #delete__button:hover {
       background: var(--color-beige);
     }
     
-    #lista h2{
+    #list h2{
       color: var(--color-beige);
     }
 

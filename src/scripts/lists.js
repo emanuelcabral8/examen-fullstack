@@ -1,6 +1,6 @@
   document.addEventListener("DOMContentLoaded", () => {
-    const botonesAgregar = document.querySelectorAll(".boton-agregar-lista");
-    const lista = document.querySelector("#lista ul");
+    const botonesAgregar = document.querySelectorAll(".add__to__list");
+    const lista = document.querySelector("#list ul");
     const titulosAgregados = new Set();
 
     botonesAgregar.forEach((boton) => {
@@ -18,7 +18,7 @@
       });
     });
 
-    const botonBorrar = document.querySelector("#boton-borrar");
+    const botonBorrar = document.querySelector("#delete__button");
     botonBorrar.addEventListener("click", () => {
       lista.innerHTML = "";
       titulosAgregados.clear();

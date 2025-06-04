@@ -1,40 +1,40 @@
 ---
 import Layout from '../layouts/layout.astro';
-import moviesData from '../data/moviesData';
+import moviesData from '../data/moviesData.js';
 import '../styles/theme.css';
 ---
 
-<Layout title="Películas – FilmRush">
+<Layout title="Series – FilmRush">
   <section style="text-align: center; margin-bottom: 2rem;">
-    <h1>Las mejores películas de todos los tiempos! 🎬</h1>
+    <h1>Las mejores películas de todos los tiempos! 📺</h1>
   </section>
 
-<section style="margin-top: 3rem;" id="series">
-    <div id="contenedorSeries">
+<section style="margin-top: 3rem;" id="movies">
+    <div id="moviesContainer">
       {moviesData.map((movie, i) => (
-        <div class="series" data-index={i}>
-          <img src={movie.image} alt={`Imagen de ${movie.title}`} />
-          <div class="series-contenido">
+        <div class="movies" data-index={i}>
+          <img src={movie.image} alt={`${movie.title} Image`} />
+          <div class="movies__content">
             <h2>{movie.title}</h2>
             <p>Puntuación: {movie.overallRating}⭐</p>
-            <p>Duración: {movie.duration}</p>
-            <input class="boton-agregar-lista" type="button" value="Agregar a mi lista" />
+            <p>Temporadas: {movie.duration}</p>
+            <input class="add__to__list" type="button" value="Agregar a mi lista" />
           </div>
         </div>
       ))}
     </div>
 </section>
 
-<section id="lista">
+<section id="list">
       <h2>Mi lista</h2>
       <ul></ul>
-      <input id="boton-borrar" type="button" value="Borrar">
+      <input id="delete__button" type="button" value="Borrar">
 </section>
 
-<script type="module" src="/src/scripts/listas.js"></script>
+<script type="module" src="/src/scripts/lists-movies.js"></script>
 
 <style>
-    #contenedorSeries {
+    #moviesContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -42,7 +42,7 @@ import '../styles/theme.css';
     margin: 0 auto; 
     }
 
-    .series {
+    .movies {
     background-color: var(--color-dark-red);
     padding: 15px;
     border-radius: 8px;
@@ -51,11 +51,11 @@ import '../styles/theme.css';
     transition: transform 0.3s ease;
     }
 
-    .series:hover {
+    .movies:hover {
      transform: scale(1.05);
     }
 
-    .series img {
+    .movies img {
     width: 120px;
     height: 160px;
     object-fit: cover;
@@ -63,19 +63,19 @@ import '../styles/theme.css';
     border-radius: 8px;
     }
 
-    .series h2 {
+    .movies h2 {
     font-size: 18px;
     margin: 10px 0;
     color: var(--color-beige);
     }
 
-    .series p {
+    .movies p {
     font-size: 14px;
     color: var(--color-beige);
     margin-bottom: 10px;
     }
 
-    .series input[type="button"] {
+    .movies input[type="button"] {
     padding: 8px 12px;
     background: var(--color-light-blue);
     color: var(--color-black);
@@ -85,10 +85,10 @@ import '../styles/theme.css';
     transition: background-color 0.2s ease;
     }
 
-    .series input[type="button"]:hover {
+    .movies input[type="button"]:hover {
     background-color: var(--color-beige);
     }
-    #lista {
+    #list {
     border: 1px solid var(--color-ligth-blue);
     border-radius: 8px;
     background: var(--color-dark-red);
@@ -98,14 +98,14 @@ import '../styles/theme.css';
     margin: 20px auto;
     }
 
-    #lista ul {
+    #list ul {
       list-style: none;
       padding: 0;
       margin: 0 0 10px 0;
       color: var(--color-beige)
     }
 
-    #lista input[type="button"] {
+    #list input[type="button"] {
       padding: 10px 15px;
       margin-right: 5px;
       color: var(--color-black);
@@ -115,15 +115,15 @@ import '../styles/theme.css';
       transition: background-color 0.2s ease;
     }
 
-    #lista #boton-borrar {
+    #list #delete__button {
       background: var(--color-light-blue);
     }
 
-    #lista #boton-borrar:hover {
+    #list #delete__button:hover {
       background: var(--color-beige);
     }
     
-    #lista h2{
+    #list h2{
       color: var(--color-beige);
     }
 
