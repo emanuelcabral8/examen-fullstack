@@ -1,0 +1,11 @@
+:root {
+    --color-dark-red: oklch(0.3596 0.147571 29.2339);
+    --color-red: oklch(0.5161 0.2019 25.94);
+    --color-beige: oklch(0.9584 0.0381 85.35);
+    --color-dark-blue: oklch(0.2938 0.0656 238.47);
+    --color-light-blue: oklch(0.665 0.0747 236.79);
+    --color-white:oklch(1 0 0);
+    --color-pale-blue: oklch(0.665 0.0747 236.79 / 50%);
+    --color-black:oklch(0 0 0);
+
+}

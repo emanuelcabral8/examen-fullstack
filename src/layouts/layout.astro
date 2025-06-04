@@ -1,5 +1,6 @@
 ---
 const { title = 'FilmRush' } = Astro.props;
+import '../styles/theme.css';
 ---
 
 <html lang="es">
@@ -23,14 +24,20 @@ const { title = 'FilmRush' } = Astro.props;
 
     <body>
         <header>
+            <a href="/">
             <img
                 class="logo"
                 src="/images/logos/logo-filmrush.png"
                 alt="FilmRush Logo"
             />
+            </a>
 
             <button class="open">
-                <img src="/images/navbar/burger-menu.svg" class="hamburger-icon" alt="Menú" />
+                <img
+                    src="/images/navbar/burger-menu.svg"
+                    class="hamburger-icon"
+                    alt="Menú"
+                />
             </button>
 
             <nav class="nav">
@@ -44,8 +51,7 @@ const { title = 'FilmRush' } = Astro.props;
                 <ul class="nav__list">
                     <li><a href="/movies">Películas</a></li>
                     <li><a href="/series">Series</a></li>
-                    <li><a href="/reviews">Celebridades</a></li>
-                    <li><a href="/contact">Contacto</a></li>
+                    <li><a href="reviews">Reviews</a></li>  
                 </ul>
             </nav>
         </header>
@@ -89,14 +95,6 @@ const { title = 'FilmRush' } = Astro.props;
         </footer>
 
         <style>
-            :root {
-                --color-dark-red: oklch(0.3596 0.147571 29.2339);
-                --color-red: oklch(0.5161 0.2019 25.94);
-                --color-beige: oklch(0.9584 0.0381 85.35);
-                --color-dark-blue: oklch(0.2938 0.0656 238.47);
-                --color-light-blue: oklch(0.665 0.0747 236.79);
-            }
-
             * {
                 box-sizing: border-box;
                 margin: 0;
@@ -110,20 +108,25 @@ const { title = 'FilmRush' } = Astro.props;
                 line-height: 1.5;
                 min-height: 100vh;
             }
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
 
-            /* Modificado para navbar fijo y sin espacios arriba/abajo */
             header {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                height: 60px; /* altura fija */
-                padding: 0 1rem; /* solo padding horizontal */
+                height: 60px;
+                padding: 0 1rem;
                 background-color: var(--color-dark-red);
                 color: white;
             }
 
             .logo {
-                height: 60px; 
+                height: 60px;
                 width: auto;
                 display: block;
             }
@@ -140,7 +143,7 @@ const { title = 'FilmRush' } = Astro.props;
             }
 
             .nav {
-                position: absolute;
+                position: fixed;
                 top: 0;
                 right: 0;
                 bottom: 0;
@@ -157,6 +160,7 @@ const { title = 'FilmRush' } = Astro.props;
                     opacity 0.3s ease,
                     transform 0.3s ease;
                 pointer-events: none;
+                 z-index: 9999; 
             }
 
             .nav.visible {
@@ -178,16 +182,15 @@ const { title = 'FilmRush' } = Astro.props;
                 color: white;
             }
 
-            .nav__list a:hover {
-                background-color: var(--color-light-blue);
-                padding: 0.3rem;
-                border-radius: 4px;
-            }
-
             .close {
                 align-self: flex-start;
+                background: transparent;
+                border: none;
             }
-
+            .open {
+                background: transparent;
+                border: none;
+            }
             .container {
                 padding: 1rem;
             }
@@ -214,7 +217,7 @@ const { title = 'FilmRush' } = Astro.props;
                 text-decoration: none;
             }
 
-            @media (min-width: 768px) {
+            @media (min-width: 768px) and (max-width: 1024px) {
                 .social-media a {
                     font-size: 1.4rem;
                 }

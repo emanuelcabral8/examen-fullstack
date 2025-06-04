@@ -1,0 +1,78 @@
+---
+import Card from "../components/card.astro"
+import Layout from "../layouts/layout.astro"
+import moviesData from "../data/moviesData";
+import seriesData from "../data/seriesData";
+---
+
+
+<Layout title="Reviews – FilmRush">
+    <h1>Opiniones más populares sobre películas 🔥</h1>
+    <section class ="review-container-movies">
+        {
+      moviesData.map((movie) => {
+        return (
+                 <Card 
+    image= {movie.image}
+    title={movie.title}
+    year= {movie.releaseYear}
+    userRating={movie.featuredUserRating}
+    review= {movie.featuredUserReview}
+    username={movie.featuredUsername}
+    date={movie.reviewDate}
+    rating={movie.overallRating}
+    />
+
+        );
+      })
+    }
+    </section>
+    <h1>Opiniones más populares sobre series 📊</h1>
+        <section class ="review-container-series">
+        {
+      seriesData.map((serie) => {
+        return (
+                 <Card 
+    image= {serie.image}
+    title={serie.title}
+    year= {serie.releaseYear}
+    userRating={serie.featuredUserRating}
+    review= {serie.featuredUserReview}
+    username={serie.featuredUsername}
+    date={serie.reviewDate}
+    rating={serie.overallRating}
+    />
+
+        );
+      })
+    }
+    </section>
+
+
+</Layout>
+
+<style>
+    .review-container-movies, .review-container-series {
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+    }
+    h1 {
+        text-align: center;
+        color:var(--color-dark-blue);
+    }
+     @media (min-width: 768px) and (max-width: 1024px) { 
+        .review-container-movies, .review-container-series {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+     }
+     @media (min-width: 1025px) {
+        .review-container-movies, .review-container-series {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+     }
+</style>
+
