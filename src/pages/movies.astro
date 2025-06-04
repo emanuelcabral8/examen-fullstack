@@ -1,23 +1,23 @@
 ---
 import Layout from '../layouts/layout.astro';
-import seriesData from '../data/seriesData.js';
+import moviesData from '../data/moviesData';
 import '../styles/theme.css';
 ---
 
 <Layout title="Series">
   <section style="text-align: center; margin-bottom: 2rem;">
-    <h1>Las mejores series de todos los tiempos! 📺</h1>
+    <h1>Las mejores películas de todos los tiempos! 📺</h1>
   </section>
 
 <section style="margin-top: 3rem;" id="series">
     <div id="contenedorSeries">
-      {seriesData.map((serie, i) => (
+      {moviesData.map((movie, i) => (
         <div class="series" data-index={i}>
-          <img src={serie.image} alt={`Imagen de ${serie.title}`} />
+          <img src={movie.image} alt={`Imagen de ${movie.title}`} />
           <div class="series-contenido">
-            <h2>{serie.title}</h2>
-            <p>Puntuación: {serie.overallRating}⭐</p>
-            <p>Temporadas: {serie.seasons}</p>
+            <h2>{movie.title}</h2>
+            <p>Puntuación: {movie.overallRating}⭐</p>
+            <p>Duración: {movie.duration}</p>
             <input class="boton-agregar-lista" type="button" value="Agregar a mi lista" />
           </div>
         </div>
