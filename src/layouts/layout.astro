@@ -25,11 +25,11 @@ import '../styles/theme.css';
     <body>
         <header>
             <a href="/">
-            <img
-                class="logo"
-                src="/logos/logo-filmrush.png"
-                alt="FilmRush Logo"
-            />
+                <img
+                    class="logo"
+                    src="/logos/logo-filmrush.png"
+                    alt="FilmRush Logo"
+                />
             </a>
 
             <button class="open">
@@ -51,7 +51,7 @@ import '../styles/theme.css';
                 <ul class="nav__list">
                     <li><a href="/movies">Películas</a></li>
                     <li><a href="/series">Series</a></li>
-                    <li><a href="reviews">Reviews</a></li>  
+                    <li><a href="reviews">Reviews</a></li>
                 </ul>
             </nav>
         </header>
@@ -160,7 +160,7 @@ import '../styles/theme.css';
                     opacity 0.3s ease,
                     transform 0.3s ease;
                 pointer-events: none;
-                 z-index: 9999; 
+                z-index: 9999;
             }
 
             .nav.visible {
@@ -179,7 +179,8 @@ import '../styles/theme.css';
 
             .nav__list a {
                 text-decoration: none;
-                color: white;
+                color: var(--color-white);
+                font-weight: bold;
             }
 
             .close {
@@ -217,9 +218,33 @@ import '../styles/theme.css';
                 text-decoration: none;
             }
 
-            @media (min-width: 768px) and (max-width: 1024px) {
+            @media (min-width: 1024px) {
                 .social-media a {
                     font-size: 1.4rem;
+                }
+                .close,
+                .open {
+                    opacity: 0;
+                    visibility: hidden;
+                    display: none;
+                }
+                .nav {
+                    position: static;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center ;
+                    gap: 2rem;
+                    opacity: 1; 
+                    visibility: visible; 
+                    transform: none; 
+                    pointer-events: auto;
+                    background-color: transparent;
+                    padding: 0;
+                }
+
+                .nav__list {
+                    flex-direction: row;
+                    gap: 2rem;
                 }
             }
         </style>
