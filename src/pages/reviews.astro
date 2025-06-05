@@ -7,7 +7,9 @@ import seriesData from "../data/seriesData";
 
 
 <Layout title="Reviews – FilmRush">
+    <section style="text-align: center; margin-bottom: 2rem;">
     <h1>Opiniones más populares sobre películas 🔥</h1>
+  </section>
     <section class ="review__container__movies">
         {
       moviesData.map((movie) => {
@@ -27,7 +29,9 @@ import seriesData from "../data/seriesData";
       })
     }
     </section>
+    <section style="text-align: center; margin-bottom: 2rem;">
     <h1>Opiniones más populares sobre series 📊</h1>
+    </section>
         <section class ="review__container__series">
         {
       seriesData.map((serie) => {
